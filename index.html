@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amdox | Premium Task Management</title>
+    <meta name="description" content="Amdox Technology - Innovation, efficiency, and seamless team collaboration.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="bg-noise"></div>
+    <div class="bg-orb" style="width: 40vw; height: 40vw; top: 10%; left: 30%; background: radial-gradient(circle, var(--accent-tertiary), transparent 70%); animation-delay: -10s; opacity: 0.15;"></div>
+    
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo" style="margin-bottom: 2.5rem; display: flex; align-items: center; gap: 12px;">
+                <div class="logo-icon" style="width: 32px; height: 32px;"></div>
+                <div>
+                    <span style="display: block; font-weight: 700; letter-spacing: 1px; font-size: 1.1rem; line-height: 1;">AMDOX</span>
+                    <span style="display: block; font-size: 0.45rem; letter-spacing: 2px; opacity: 0.6; margin-top: 2px; text-transform: uppercase;">Technologies</span>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item"><i>🏠</i> Home</a>
+                <a href="dashboard.html" class="nav-item"><i>📊</i> Dashboard</a>
+                <a href="kanban.html" class="nav-item"><i>📋</i> Kanban</a>
+                <a href="attendance.html" class="nav-item"><i>📅</i> Attendance</a>
+                <a href="scanner.html" class="nav-item"><i>🔍</i> Scanner</a>
+                <a href="team.html" class="nav-item"><i>👥</i> Team</a>
+                <a href="settings.html" class="nav-item"><i>⚙️</i> Settings</a>
+                <a href="#" class="nav-item" id="logoutBtn" style="margin-top: auto; color: #ef4444;"><i>🚪</i> Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header animate-in">
+                <div>
+                    <h1>Welcome back, <span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Siva</span></h1>
+                    <p style="color: var(--text-secondary);">Amdox Technology: Leading the future of productivity.</p>
+                </div>
+                <div class="user-profile">
+                    <div class="avatar dynamic-user">KS</div>
+                    <span>Kuruva Siva</span>
+                </div>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="glass card animate-in" style="margin-bottom: 3rem; padding: 4rem; overflow: visible;">
+                <div style="position: relative; z-index: 1;">
+                    <h2 style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; font-weight: 700;">
+                        The Future of <br><span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Enterprise Tech</span>
+                    </h2>
+                    <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; line-height: 1.6; margin-bottom: 2.5rem;">
+                        Amdox Technology streamlines your internal operations, bringing innovation 
+                        and efficiency to every department in your organization.
+                    </p>
+                    <div style="display: flex; gap: 1.5rem;">
+                        <a href="kanban.html" class="btn btn-primary">Launch Board</a>
+                        <button class="btn btn-outline" id="learnMoreBtn">Explore Features</button>
+                    </div>
+                </div>
+                <!-- Abstract Design Element -->
+                <div style="position: absolute; right: -50px; top: -50px; width: 300px; height: 300px; background: var(--accent-gradient); border-radius: 40px; transform: rotate(15deg); opacity: 0.1; filter: blur(40px);"></div>
+            </section>
+
+            <!-- Features Section (Rectified Target) -->
+            <div id="featuresSection" style="padding-top: 2rem; margin-bottom: 3rem;">
+                <h2 style="margin-bottom: 2rem;">Core Innovations</h2>
+                <div class="bento-grid">
+                    <div class="glass card animate-in" style="animation-delay: 0.1s;">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">🎯</div>
+                        <h3>Precision Assignment</h3>
+                        <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.95rem;">
+                            Assign tasks with absolute clarity. Deadlines and priority levels 
+                            ensure your team knows exactly what matters most.
+                        </p>
+                    </div>
+                    <div class="glass card animate-in" style="animation-delay: 0.2s;">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">⚡</div>
+                        <h3>Real-Time Synergy</h3>
+                        <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.95rem;">
+                            Discuss, comment, and share files within the platform. 
+                            Seamless teamwork that drives results faster than ever.
+                        </p>
+                    </div>
+                    <div class="glass card animate-in" style="animation-delay: 0.3s;">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">📈</div>
+                        <h3>Deep Analytics</h3>
+                        <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.95rem;">
+                            Generate reports on task completion and performance. 
+                            Data-driven decisions for teams of all sizes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Corporate Identity Section -->
+            <div id="corporateSection" style="margin-bottom: 3rem;" class="animate-in">
+                <h2 style="margin-bottom: 2rem;">Amdox Technology <span style="font-weight: 300; opacity: 0.6;">| Corporate Identity</span></h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="glass card" style="border-top: 4px solid var(--accent-magenta);">
+                        <h4 style="color: var(--accent-magenta); margin-bottom: 1rem; text-transform: uppercase;">Our Mission</h4>
+                        <p style="font-size: 1.1rem; line-height: 1.6;">To empower global organizations by delivering seamless, intelligent, and highly secure digital workspaces that redefine work-life efficiency.</p>
+                    </div>
+                    <div class="glass card" style="border-top: 4px solid var(--accent-orange);">
+                        <h4 style="color: var(--accent-orange); margin-bottom: 1rem; text-transform: uppercase;">Our Vision</h4>
+                        <p style="font-size: 1.1rem; line-height: 1.6;">To become the world's most trusted platform for enterprise collaboration, setting the standard for innovation in the digital era.</p>
+                    </div>
+                    <div class="glass card" style="border-top: 4px solid #00c4ff;">
+                        <h4 style="color: #00c4ff; margin-bottom: 1rem; text-transform: uppercase;">Core Values</h4>
+                        <ul style="list-style: none; padding: 0; font-size: 1rem; line-height: 2;">
+                            <li>🚀 Uncompromising Innovation</li>
+                            <li>🔒 Security by Design</li>
+                            <li>🤝 Radical Collaboration</li>
+                            <li>🏆 Peak Performance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Global Presence -->
+                <div class="glass card" style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                    <div>
+                        <h4 style="margin-bottom: 1rem;">Global Presence</h4>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">Headquartered in the Silicon Valley of India, Amdox Technology spans 12 global regions, supporting over 2.5 million corporate users daily.</p>
+                        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                            <div style="text-align: center;"><div style="font-size: 1.5rem; font-weight: 700;">12+</div><div style="font-size: 0.75rem; color: var(--text-secondary);">Countries</div></div>
+                            <div style="text-align: center;"><div style="font-size: 1.5rem; font-weight: 700;">500+</div><div style="font-size: 0.75rem; color: var(--text-secondary);">Enterprises</div></div>
+                            <div style="text-align: center;"><div style="font-size: 1.5rem; font-weight: 700;">2.5M</div><div style="font-size: 0.75rem; color: var(--text-secondary);">Active Users</div></div>
+                        </div>
+                    </div>
+                    <div style="border-left: 1px solid var(--border); padding-left: 3rem;">
+                        <h4 style="margin-bottom: 1rem;">Contact Headquarters</h4>
+                        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">📧 contact@amdox.tech</p>
+                        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">📞 +91 630-282-3022</p>
+                        <p style="font-size: 0.9rem;">📍 Tech Park, Block 3, Bangalore, India</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Group 3 -->
+            <div class="glass card animate-in" style="animation-delay: 0.4s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <h3>Project Team</h3>
+                    <a href="team.html" style="color: var(--accent-magenta); font-size: 0.9rem; text-decoration: none;">View All Members →</a>
+                </div>
+                <div style="display: flex; gap: 2rem; overflow-x: auto; padding-bottom: 1rem;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 100px;">
+                        <div class="avatar dynamic-user">KS</div>
+                        <span style="font-size: 0.85rem; font-weight: 500;">K. Siva</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 100px;">
+                        <div class="avatar" style="background: #6366f1;">SR</div>
+                        <span style="font-size: 0.85rem; font-weight: 500;">S. Rajendra</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 100px;">
+                        <div class="avatar" style="background: #10b981;">SK</div>
+                        <span style="font-size: 0.85rem; font-weight: 500;">M. Sai Kiran</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 100px;">
+                        <div class="avatar" style="background: #f59e0b;">MD</div>
+                        <span style="font-size: 0.85rem; font-weight: 500;">M. Darshni</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
