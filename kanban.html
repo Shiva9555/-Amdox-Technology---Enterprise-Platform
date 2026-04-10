@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amdox | Kanban</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="bg-noise"></div>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo" style="margin-bottom: 2.5rem; display: flex; align-items: center; gap: 12px;">
+                <div class="logo-icon" style="width: 32px; height: 32px;"></div>
+                <div>
+                    <span style="display: block; font-weight: 700; letter-spacing: 1px; font-size: 1.1rem; line-height: 1;">AMDOX</span>
+                    <span style="display: block; font-size: 0.45rem; letter-spacing: 2px; opacity: 0.6; margin-top: 2px; text-transform: uppercase;">Technologies</span>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item"><i>🏠</i> Home</a>
+                <a href="dashboard.html" class="nav-item"><i>📊</i> Dashboard</a>
+                <a href="kanban.html" class="nav-item"><i>📋</i> Kanban</a>
+                <a href="attendance.html" class="nav-item"><i>📅</i> Attendance</a>
+                <a href="scanner.html" class="nav-item"><i>🔍</i> Scanner</a>
+                <a href="team.html" class="nav-item"><i>👥</i> Team</a>
+                <a href="settings.html" class="nav-item"><i>⚙️</i> Settings</a>
+                <a href="#" class="nav-item" id="logoutBtn" style="margin-top: auto; color: #ef4444;"><i>🚪</i> Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header animate-in">
+                <div>
+                    <h1>Task <span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Board</span></h1>
+                    <p style="color: var(--text-secondary);">Manage, track, and collaborate on your team's workflow.</p>
+                </div>
+                <div style="display: flex; gap: 1.5rem; align-items: center;">
+                    <button class="btn btn-primary" id="addTaskBtn">
+                        <span style="font-size: 1.4rem; line-height: 1;">+</span> New Task
+                    </button>
+                    <div class="user-profile">
+                        <div class="avatar dynamic-user">KS</div>
+                        <span>Kuruva Siva</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Kanban Implementation -->
+            <div class="kanban-board animate-in" style="animation-delay: 0.1s;">
+                <!-- TO DO -->
+                <div class="kanban-column" id="col-todo">
+                    <div class="column-header">
+                        <h3 style="font-size: 1.1rem; font-weight: 600;">To Do</h3>
+                        <span style="font-size: 0.8rem; background: var(--bg-card); padding: 4px 10px; border-radius: 12px; border: 1px solid var(--border);">2</span>
+                    </div>
+                    
+                    <div class="glass task-card" draggable="true">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                            <span class="badge badge-high">High Priority</span>
+                            <span style="font-size: 0.7rem; color: var(--text-secondary);">Due: 15 Apr</span>
+                        </div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.6rem;">Auth Module Revamp</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.5;">Implement secure authorization and role-based access for Group 3.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="display: flex;">
+                                <div class="avatar" style="width: 28px; height: 28px; font-size: 0.7rem; border: 2px solid var(--bg-dark);">SR</div>
+                                <div class="avatar dynamic-user" style="width: 28px; height: 28px; font-size: 0.7rem; border: 2px solid var(--bg-dark); margin-left: -10px;">KS</div>
+                            </div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">💬 4 Comments</div>
+                        </div>
+                    </div>
+
+                    <div class="glass task-card" draggable="true">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                            <span class="badge badge-medium">Medium</span>
+                            <span style="font-size: 0.7rem; color: var(--text-secondary);">Due: 18 Apr</span>
+                        </div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.6rem;">API Documentation</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.5;">Complete Swagger/OpenAPI specs for the main microservices.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="avatar" style="width: 28px; height: 28px; font-size: 0.7rem; background: #f59e0b;">MD</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">💬 0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IN PROGRESS -->
+                <div class="kanban-column" id="col-progress">
+                    <div class="column-header">
+                        <h3 style="font-size: 1.1rem; font-weight: 600;">In Progress</h3>
+                        <span style="font-size: 0.8rem; background: var(--bg-card); padding: 4px 10px; border-radius: 12px; border: 1px solid var(--border);">1</span>
+                    </div>
+                    <div class="glass task-card" draggable="true" style="border-left: 4px solid var(--accent-magenta);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                            <span class="badge badge-high">High Priority</span>
+                            <span style="font-size: 0.7rem; color: var(--text-secondary);">Due: Today</span>
+                        </div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.6rem;">Responsive Dashboards</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.5;">Fixing interactive chart scaling issues on tablet and mobile views.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="avatar" style="width: 28px; height: 28px; font-size: 0.7rem; background: #10b981;">SK</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">💬 12</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REVIEW -->
+                <div class="kanban-column" id="col-review">
+                    <div class="column-header">
+                        <h3 style="font-size: 1.1rem; font-weight: 600;">Review</h3>
+                        <span style="font-size: 0.8rem; background: var(--bg-card); padding: 4px 10px; border-radius: 12px; border: 1px solid var(--border);">1</span>
+                    </div>
+                    <div class="glass task-card" draggable="true">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                            <span class="badge badge-low">Low</span>
+                            <span style="font-size: 0.7rem; color: var(--text-secondary);">Due: 12 Apr</span>
+                        </div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.6rem;">Premium Icon Pack</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.5;">Update all legacy SVG icons with the new high-fidelity variants.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="avatar" style="width: 28px; height: 28px; font-size: 0.7rem; background: #8b5cf6;">MJ</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">💬 2</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DONE -->
+                <div class="kanban-column" id="col-done">
+                    <div class="column-header">
+                        <h3 style="font-size: 1.1rem; font-weight: 600;">Done</h3>
+                        <span style="font-size: 0.8rem; background: var(--bg-card); padding: 4px 10px; border-radius: 12px; border: 1px solid var(--border);">0</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- RECTIFIED Task Modal -->
+    <div id="taskModal" class="modal-overlay">
+        <div class="glass card modal-content" style="border-color: var(--accent-magenta);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 style="font-size: 1.5rem;">Create New Task</h2>
+                <button onclick="document.getElementById('taskModal').classList.remove('active')" style="background: transparent; border: none; color: white; cursor: pointer; font-size: 1.5rem;">&times;</button>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                <div>
+                    <label style="display: block; font-size: 0.85rem; margin-bottom: 0.5rem; color: var(--text-secondary);">Task Title</label>
+                    <input type="text" id="taskTitle" placeholder="e.g. Design Login Page">
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.85rem; margin-bottom: 0.5rem; color: var(--text-secondary);">Description</label>
+                    <textarea id="taskDesc" placeholder="Describe the task details..." rows="3"></textarea>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                    <div>
+                        <label style="display: block; font-size: 0.85rem; margin-bottom: 0.5rem; color: var(--text-secondary);">Priority</label>
+                        <select id="taskPriority">
+                            <option value="High">High Priority</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low Priority</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.85rem; margin-bottom: 0.5rem; color: var(--text-secondary);">Due Date</label>
+                        <input type="date" id="taskDate">
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <button class="btn btn-primary" id="submitTaskBtn" style="flex: 2;">Confirm & Create</button>
+                    <button class="btn btn-outline" onclick="document.getElementById('taskModal').classList.remove('active')" style="flex: 1;">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
