@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amdox | Project Scanner</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo" style="margin-bottom: 2.5rem; display: flex; align-items: center; gap: 12px;">
+                <div class="logo-icon" style="width: 32px; height: 32px;"></div>
+                <div>
+                    <span style="display: block; font-weight: 700; letter-spacing: 1px; font-size: 1.1rem; line-height: 1;">AMDOX</span>
+                    <span style="display: block; font-size: 0.45rem; letter-spacing: 2px; opacity: 0.6; margin-top: 2px; text-transform: uppercase;">Technologies</span>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item"><i>🏠</i> Home</a>
+                <a href="dashboard.html" class="nav-item"><i>📊</i> Dashboard</a>
+                <a href="kanban.html" class="nav-item"><i>📋</i> Kanban</a>
+                <a href="attendance.html" class="nav-item"><i>📅</i> Attendance</a>
+                <a href="scanner.html" class="nav-item active"><i>🔍</i> Scanner</a>
+                <a href="team.html" class="nav-item"><i>👥</i> Team</a>
+                <a href="settings.html" class="nav-item"><i>⚙️</i> Settings</a>
+                <a href="#" class="nav-item" id="logoutBtn" style="margin-top: auto; color: #ef4444;"><i>🚪</i> Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header animate-in">
+                <div>
+                    <h1>Project <span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Scanner</span></h1>
+                    <p style="color: var(--text-secondary);">Instantly join projects and track assets via QR technology.</p>
+                </div>
+                <div class="user-profile">
+                    <div class="avatar dynamic-user">U</div>
+                    <span>User</span>
+                </div>
+            </header>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <!-- Scanner Simulation -->
+                <div class="glass card animate-in" style="animation-delay: 0.1s;">
+                    <h3 style="margin-bottom: 2rem;">QR Scanner</h3>
+                    <div style="aspect-ratio: 16/10; background: #000; border-radius: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 2px solid var(--border);">
+                        <!-- Scanner Animation -->
+                        <div id="scannerLine" style="position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--accent-magenta); box-shadow: 0 0 15px var(--accent-magenta); animation: scanLine 3s infinite linear;"></div>
+                        <div style="color: var(--text-secondary); text-align: center;">
+                            <p style="color: var(--text-secondary); margin-bottom: 2.5rem;">Use your Amdox Account</p>
+                            <i style="font-size: 3rem; display: block; margin-bottom: 1rem; opacity: 0.5;">📷</i>
+                            <p style="font-size: 0.9rem;">Camera Feed Simulated</p>
+                            <button id="simulateScanBtn" class="btn btn-primary" style="margin-top: 1.5rem; font-size: 0.8rem;">Simulate Manual Scan</button>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                            Align the project QR code within the frame to automatically view details and sync with your Kanban board.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- QR Generator -->
+                <div class="glass card animate-in" style="animation-delay: 0.2s;">
+                    <h3 style="margin-bottom: 1.5rem;">Generate Project QR</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div>
+                            <label style="display: block; font-size: 0.85rem; margin-bottom: 0.5rem; color: var(--text-secondary);">Select Project</label>
+                            <select id="projectSelect" class="glass">
+                                <option value="auth-module">Auth Module Revamp</option>
+                                <option value="ui-redesign">Amdox UI v2.0</option>
+                                <option value="api-docs">API Documentation</option>
+                            </select>
+                        </div>
+                        <div style="display: flex; justify-content: center; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 16px;">
+                            <div id="projectQr" style="padding: 1rem; background: white; border-radius: 12px; height: 160px; width: 160px;"></div>
+                        </div>
+                        <button id="downloadQr" class="btn btn-outline" style="width: 100%;">Download QR Identifier</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scanner Results -->
+            <div id="scanResult" class="glass card animate-in" style="margin-top: 2rem; display: none; border-left: 4px solid #10b981;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h3 style="color: #10b981;">Scan Successful!</h3>
+                        <p style="margin-top: 5px;">Linked Project: <span style="font-weight: 600;">Auth Module Revamp</span></p>
+                    </div>
+                    <button class="btn btn-primary" onclick="window.location.href='kanban.html'">Open in Kanban</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <style>
+        @keyframes scanLine {
+            0% { top: 0%; }
+            50% { top: 100%; }
+            100% { top: 0%; }
+        }
+    </style>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Local QR Generator Logic (Depends on QRCode lib loaded above)
+        function generateLocalQr() {
+            const select = document.getElementById('projectSelect');
+            const container = document.getElementById('projectQr');
+            if(!select || !container) return;
+            container.innerHTML = '';
+            new QRCode(container, {
+                text: "AMDOX-" + select.value,
+                width: 128,
+                height: 128
+            });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const sel = document.getElementById('projectSelect');
+            if(sel) {
+                sel.onchange = generateLocalQr;
+                generateLocalQr();
+            }
+        });
+    </script>
+</body>
+</html>
