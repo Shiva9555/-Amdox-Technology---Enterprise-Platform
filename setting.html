@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amdox | Settings</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Panel Visibility */
+        .settings-panel { display: none; }
+        .settings-panel.active { display: block !important; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo" style="margin-bottom: 2.5rem; display: flex; align-items: center; gap: 12px;">
+                <div class="logo-icon" style="width: 32px; height: 32px;"></div>
+                <div>
+                    <span style="display: block; font-weight: 700; letter-spacing: 1px; font-size: 1.1rem; line-height: 1;">AMDOX</span>
+                    <span style="display: block; font-size: 0.45rem; letter-spacing: 2px; opacity: 0.6; margin-top: 2px; text-transform: uppercase;">Technologies</span>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item"><i>🏠</i> Home</a>
+                <a href="dashboard.html" class="nav-item"><i>📊</i> Dashboard</a>
+                <a href="kanban.html" class="nav-item"><i>📋</i> Kanban</a>
+                <a href="attendance.html" class="nav-item"><i>📅</i> Attendance</a>
+                <a href="scanner.html" class="nav-item"><i>🔍</i> Scanner</a>
+                <a href="team.html" class="nav-item"><i>👥</i> Team</a>
+                <a href="settings.html" class="nav-item active"><i>⚙️</i> Settings</a>
+                <a href="#" class="nav-item" id="logoutBtn" style="margin-top: auto; color: #ef4444;"><i>🚪</i> Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header animate-in">
+                <div>
+                    <h1>Account <span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Settings</span></h1>
+                    <p style="color: var(--text-secondary);">Manage your profile, preferences, and security settings.</p>
+                </div>
+                <div class="user-profile">
+                    <div class="avatar dynamic-user">U</div>
+                    <span>User</span>
+                </div>
+            </header>
+
+            <div style="display: grid; grid-template-columns: 280px 1fr; gap: 3rem;">
+                <!-- Settings Tabs Navigation -->
+                <div class="animate-in" style="animation-delay: 0.1s;">
+                    <div class="nav-links" id="settingsTabs" style="gap: 8px;">
+                        <a href="#" class="nav-item active" data-target="profile" style="justify-content: flex-start;">Profile Information</a>
+                        <a href="#" class="nav-item" data-target="notifications" style="justify-content: flex-start;">Notifications</a>
+                        <a href="#" class="nav-item" data-target="security" style="justify-content: flex-start;">Security & Privacy</a>
+                        <a href="#" class="nav-item" data-target="theme" style="justify-content: flex-start;">Theme Customization</a>
+                        <a href="#" class="nav-item" data-target="integrations" style="justify-content: flex-start;">Integrations</a>
+                    </div>
+                </div>
+
+                <!-- Panels -->
+                <div id="settingsPanels" class="animate-in" style="animation-delay: 0.2s;">
+                    
+                    <!-- Profile Panel -->
+                    <div class="glass card settings-panel active" id="panel-profile">
+                        <div style="margin-bottom: 2.5rem;">
+                            <h3 style="margin-bottom: 1.5rem;">Public Profile</h3>
+                            <div style="display: flex; align-items: center; gap: 2rem;">
+                                <div class="avatar dynamic-user" style="width: 100px; height: 100px; font-size: 2rem; box-shadow: 0 0 30px rgba(255, 0, 122, 0.4);">U</div>
+                                <div>
+                                    <button class="btn btn-primary" style="font-size: 0.85rem; padding: 10px 20px;">Change Avatar</button>
+                                    <button class="btn glass" style="font-size: 0.85rem; padding: 10px 20px; margin-left: 10px;">Remove</button>
+                                    <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 12px;">JPG, GIF or PNG. Max size of 800K</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                            <div>
+                                <label style="display: block; font-size: 0.85rem; margin-bottom: 0.6rem; color: var(--text-secondary);">Full Name</label>
+                                <input type="text" id="settingsFullName" value="Kuruva Siva">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 0.85rem; margin-bottom: 0.6rem; color: var(--text-secondary);">Email Address</label>
+                                <input type="email" value="varuntej9555@gmail.com">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 0.85rem; margin-bottom: 0.6rem; color: var(--text-secondary);">Phone Number</label>
+                                <input type="text" value="+91 6302823022">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 0.85rem; margin-bottom: 0.6rem; color: var(--text-secondary);">Department</label>
+                                <input type="text" value="Group 3 Management">
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 2.5rem;">
+                            <label style="display: block; font-size: 0.85rem; margin-bottom: 0.6rem; color: var(--text-secondary);">Bio</label>
+                            <textarea style="min-height: 100px;">Group lead at Amdox Technology. Focused on building innovative task management solutions.</textarea>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem; border-top: 1px solid var(--border); padding-top: 2rem;">
+                            <button id="saveSettingsBtn" class="btn btn-primary">Save Changes</button>
+                            <button id="cancelSettingsBtn" class="btn btn-outline">Cancel</button>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Panel -->
+                    <div class="glass card settings-panel" id="panel-notifications">
+                        <h3>Notification Preferences</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 2.5rem;">Manage your alert channels.</p>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="display: flex; justify-content: space-between; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 16px;">
+                                <span>Email Summaries</span>
+                                <input type="checkbox" checked style="width: 24px;">
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 16px;">
+                                <span>Desktop Alerts</span>
+                                <input type="checkbox" checked style="width: 24px;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Panel -->
+                    <div class="glass card settings-panel" id="panel-security">
+                        <h3>Security & Data</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 2.5rem;">Enhance the security of your Amdox profile.</p>
+                        <button class="btn btn-outline" style="width: 100%; margin-bottom: 1rem;">Update Password</button>
+                        <button class="btn btn-primary" style="width: 100%;">Setup Two-Factor (2FA)</button>
+                    </div>
+
+                    <!-- Theme Panel -->
+                    <div class="glass card settings-panel" id="panel-theme">
+                        <h3>Theme & Design</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 2.5rem;">Select your preferred aesthetic.</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <div class="glass" style="padding: 2.5rem; text-align: center; border: 2px solid var(--accent-magenta);">
+                                <h4 style="color: white;">Neon Dark</h4>
+                                <p style="font-size: 0.8rem; margin-top: 10px;">Current Active</p>
+                            </div>
+                            <div class="glass" style="padding: 2.5rem; text-align: center; opacity: 0.4;">
+                                <h4>Cyber Light</h4>
+                                <p style="font-size: 0.8rem; margin-top: 10px;">Coming Soon</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Integrations Panel -->
+                    <div class="glass card settings-panel" id="panel-integrations">
+                        <h3>App Library</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 2.5rem;">Connect Amdox to your existing workflow.</p>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                            <div class="glass" style="padding: 1.5rem; text-align: center;">GitHub</div>
+                            <div class="glass" style="padding: 1.5rem; text-align: center;">Slack</div>
+                            <div class="glass" style="padding: 1.5rem; text-align: center;">Jira</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
