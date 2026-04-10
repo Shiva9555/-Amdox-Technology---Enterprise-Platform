@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amdox | Create Account</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body style="display: flex; align-items: center; justify-content: center; min-height: 100vh;">
+    <div class="glass card animate-in" style="width: 100%; max-width: 500px; padding: 3.5rem; text-align: center;">
+        <div class="logo" style="justify-content: center; margin-bottom: 2.5rem; flex-direction: column;">
+            <div class="logo-icon" style="width: 70px; height: 70px; margin-bottom: 1rem;"></div>
+            <div style="text-align: center;">
+                <span style="font-size: 1.8rem; letter-spacing: 2px; font-weight: 700; color: white; display: block;">AMDOX</span>
+                <div style="font-size: 0.65rem; letter-spacing: 4px; opacity: 0.5; margin-top: -2px; text-transform: uppercase;">Technologies</div>
+            </div>
+        </div>
+        <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Create your Amdox Account</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2.5rem;">Continue to Amdox Technology</p>
+
+        <form id="registerForm" style="display: flex; flex-direction: column; gap: 1.5rem; text-align: left;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <input type="text" id="firstName" placeholder="First name" style="padding: 14px;">
+                <input type="text" id="lastName" placeholder="Last name" style="padding: 14px;">
+            </div>
+            <div>
+                <input type="text" id="email" placeholder="Username or Phone number" style="padding: 14px;">
+                <span style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px; display: block;">You can use letters, numbers & periods</span>
+            </div>
+            <div style="position: relative;">
+                <input type="password" id="password" placeholder="Password" style="padding: 14px; width: 100%;">
+                <span id="togglePassword" style="position: absolute; right: 15px; top: 14px; cursor: pointer; color: var(--text-secondary);">👁️</span>
+            </div>
+            <div style="position: relative;">
+                <input type="password" id="confirmPassword" placeholder="Confirm" style="padding: 14px; width: 100%;">
+                <span id="toggleConfirmPassword" style="position: absolute; right: 15px; top: 14px; cursor: pointer; color: var(--text-secondary);">👁️</span>
+            </div>
+            
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                By clicking "Next", you agree to Amdox Technology's 
+                <a href="#" style="color: var(--accent-magenta); text-decoration: none;">Terms of Service</a> & 
+                <a href="#" style="color: var(--accent-magenta); text-decoration: none;">Privacy Policy</a>.
+            </p>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem;">
+                <a href="login.html" style="color: var(--accent-magenta); text-decoration: none; font-weight: 600;">Sign in instead</a>
+                <button type="submit" class="btn btn-primary" style="padding: 12px 30px;">Next</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
