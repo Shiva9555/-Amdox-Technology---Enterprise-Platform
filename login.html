@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amdox | Login</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body style="display: flex; align-items: center; justify-content: center; min-height: 100vh;">
+    <!-- Navigation Bar -->
+    <nav class="navbar" style="position: absolute; top: 0; right: 0; padding: 2rem 5rem; display: flex; align-items: center; gap: 3rem; width: 100%; justify-content: flex-end; z-index: 100;">
+        <div style="position: absolute; left: 5rem; font-size: 2rem; font-weight: 800; color: var(--accent-primary);">Amdox</div>
+        <a href="#" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem;">HOME</a>
+        <a href="#" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem;">ABOUT</a>
+        <a href="#" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem;">SERVICE</a>
+        <a href="#" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem;">DESIGN</a>
+        <a href="#" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem;">CONTACT</a>
+        <div style="display: flex; gap: 0;">
+            <input type="text" placeholder="Type to Search" style="background: white; color: black; border-radius: 5px 0 0 5px; padding: 10px 15px; width: 200px; border: none;">
+            <button class="btn btn-primary" style="border-radius: 0 5px 5px 0; padding: 10px 20px;">Search</button>
+        </div>
+    </nav>
+
+    <div class="hero-container" style="display: flex; width: 90%; max-width: 1400px; gap: 5rem; align-items: center; justify-content: space-between; padding-top: 5rem;">
+        
+        <!-- Left Hero Section -->
+        <div class="hero-text" style="flex: 1; padding-right: 2rem;">
+            <h1 style="font-size: 4.5rem; line-height: 1.1; margin-bottom: 1.5rem; font-weight: 800; color: white;">
+                Web Design & <br> <span style="color: var(--accent-primary);">Development</span> <br> Course
+            </h1>
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 3rem; max-width: 600px;">
+                Web design is a specialization of the design stream. They also use HTML, CSS, WYSIWYG editing software, mark up validators etc. to create design elements.
+            </p>
+            <button class="btn btn-primary" style="padding: 15px 50px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px;">Join Us</button>
+        </div>
+
+        <!-- Right Login Section -->
+        <div class="login-panel glass" style="width: 400px; padding: 3rem; border-radius: 10px; background: rgba(0,0,0,0.85);">
+            <h2 style="font-size: 1.8rem; margin-bottom: 2.5rem; color: var(--accent-primary); text-align: center;">Login Here</h2>
+            
+            <form id="loginForm" style="display: flex; flex-direction: column; gap: 2rem;">
+                <div>
+                    <input type="text" id="email" placeholder="Enter Email Here" style="background: transparent; border: none; border-bottom: 1px solid var(--accent-primary); border-radius: 0; padding: 10px 0; color: white;">
+                </div>
+                <div>
+                    <input type="password" id="password" placeholder="Enter Password Here" style="background: transparent; border: none; border-bottom: 1px solid var(--accent-primary); border-radius: 0; padding: 10px 0; color: white;">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; margin-top: 1rem;">Login</button>
+                
+                <p style="text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.7);">
+                    Don't have an account? <br>
+                    <a href="register.html" style="color: var(--accent-primary); text-decoration: none;">Sign up</a> here
+                </p>
+
+                <p style="text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.5);">Log in with</p>
+                <div style="display: flex; justify-content: center; gap: 1.5rem; font-size: 1.2rem;">
+                    <span>f</span> <span>i</span> <span>t</span> <span>G</span> <span>N</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Password Visibility Toggle
+        const tp = document.getElementById('togglePassword');
+        const pi = document.getElementById('password');
+        if(tp && pi) {
+            tp.onclick = () => {
+                const type = pi.getAttribute('type') === 'password' ? 'text' : 'password';
+                pi.setAttribute('type', type);
+                tp.textContent = type === 'password' ? '👁️' : '🙈';
+            };
+        }
+    </script>
+</body>
+</html>
